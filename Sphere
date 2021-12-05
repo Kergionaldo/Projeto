@@ -20,15 +20,14 @@ public class Sphere : MonoBehaviour
     {
         eixox = Input.GetAxis("Horizontal");
         eixoy = Input.GetAxis("Vertical");
-        //eixoz = Input.GetAxis("Longitudinal");
 
-        transform.Translate(Vector3.right * eixox);
-        transform.Translate(Vector3.forward * eixoy);
-        /*
-        transform.Translate(Vector3.forward * eixoz);
-        transform.Translate(Vector3.back * eixoz);
-        */
+        transform.Translate(Vector3.right * eixox * Time.deltaTime * 10);
+        transform.Translate(Vector3.forward * eixoy * Time.deltaTime * 10);
 
+        if (Input.GetKeyUp("space"))
+        {
+            transform.Translate(Vector3.up);
+        }
 
     }
 }
